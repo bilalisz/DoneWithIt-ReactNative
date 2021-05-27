@@ -6,7 +6,7 @@ import {
   TouchableOpacityBase,
   TouchableOpacity,
 } from "react-native";
-import color from "../../config/color";
+import color from "../../config/AppColor";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 

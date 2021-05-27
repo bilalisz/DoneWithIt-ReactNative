@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, ImageBackground, StyleSheet, View,Text, TouchableOpacity } from "react-native";
-import color from "../../config/color";
+import color from "../../config/AppColor";
 import ButtonComp from "../components/ButtonComp";
 
 function WelcomeScreen(props) {

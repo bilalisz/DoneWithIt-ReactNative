@@ -1,20 +1,23 @@
 import React from 'react';
-import { View,StyleSheet } from 'react-native';
+import { View,StyleSheet, SafeAreaView } from 'react-native';
 import Constants from 'expo-constants'
+import color from '../../config/AppColor';
+import AppColor from '../../config/AppColor';
 
 
 function RootScreen({children}) {
-    console.log(Constants)
+ 
     return (
-        <View style={styles.screen}>
+        <SafeAreaView style={styles.screen}>
             {children}
-        </View>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     screen:{
-        backgroundColor:"#f7f4f4",
+        flex:1,
+        backgroundColor:AppColor.bgColor,
         marginTop:Constants.statusBarHeight
     }
 })

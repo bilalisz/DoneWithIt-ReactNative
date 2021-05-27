@@ -7,15 +7,21 @@ import {
   ActivityIndicator,
   TouchableOpacity,
 } from "react-native";
-import color from "../../config/color";
-function CardComp({ image, title, subTitle, borderRadius=20,marginTop=20 }) {
+import color from "../../config/AppColor";
+function CardComp({
+  image,
+  title,
+  subTitle,
+  borderRadius = 20,
+  marginTop = 20,
+}) {
   return (
-    <View style={{...styles.card,borderRadius,marginTop}}>
-     {image ? <Image style={styles.image} source={{ uri: image }}/>:<ActivityIndicator
-      style={styles.loader}
-      size="small"
-      color="#0000ff"
-    />}
+    <View style={{ ...styles.card, borderRadius, marginTop }}>
+      {image ? (
+        <Image style={styles.image} source={{ uri: image }} />
+      ) : (
+        <ActivityIndicator style={styles.loader} size="small" color="#0000ff" />
+      )}
       <View style={styles.titleWrapper}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subTitle}>$ {subTitle}</Text>
@@ -26,33 +32,32 @@ function CardComp({ image, title, subTitle, borderRadius=20,marginTop=20 }) {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: "#fff",
-    paddingBottom:10,
-    overflow:"hidden",
+    paddingBottom: 10,
+    overflow: "hidden",
     // shadowColor:'gray',
     // shadowOpacity:1,
     // shadowOffset:{width:10,height:10},
-    elevation:10
-   
+    elevation: 10,
   },
   image: {
     width: "100%",
     height: 300,
   },
-  titleWrapper:{
-    padding:20
+  titleWrapper: {
+    padding: 20,
   },
-  title:{
-    fontSize:20,
-    fontWeight:"600"
+  title: {
+    fontSize: 20,
+    fontWeight: "600",
   },
-  subTitle:{
-    fontSize:18,
-    color:color.secondary
+  subTitle: {
+    fontSize: 18,
+    color: color.secondary,
   },
-  loader:{ 
-      justifyContent: "center", 
-      alignItems: "center" 
-    }
+  loader: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 export default CardComp;
 

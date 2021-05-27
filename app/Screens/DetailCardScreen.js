@@ -1,8 +1,8 @@
 import React from 'react';
 import { View,Image,Text,StyleSheet } from 'react-native';
-import color from '../../config/color';
+import color from '../../config/AppColor';
 import CardComp from '../components/CardComp';
-import ShortProfile from '../components/ShortProfile';
+import ListItem from '../components/ListItem';
 import { getItemById } from '../services/fackservices';
 
 
@@ -16,7 +16,7 @@ function DetailCardScreen(props) {
            marginTop={0}
            />
            <View style={styles.seperater}/>
-          <ShortProfile title="Muhammad Bilal Khan" subTitle="11 listing" image="https://pbs.twimg.com/profile_images/1350007502214209537/c7VRgZ_w_400x400.jpg"/>
+          <ListItem title="Muhammad Bilal Khan" subTitle="11 listing" image="https://pbs.twimg.com/profile_images/1350007502214209537/c7VRgZ_w_400x400.jpg"/>
           
       </View>
     );

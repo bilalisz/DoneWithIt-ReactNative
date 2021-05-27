@@ -29,7 +29,7 @@ const profileDetailData = [
   {
     id: "2",
     title: " AbduallJalal Khan",
-    subTitle: "11 listing",
+    subTitle: "10 listing",
     image:
       "https://scontent.flhe7-1.fna.fbcdn.net/v/t1.6435-9/134149605_118788623414940_4731672291048745309_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeEjfzsrGqkeIfxXQdEN7toEubWabRc57ay5tZptFzntrCu7DKO8RG3an3gCtFQ13T_zp2YhYcqL-OSaeyuhj8MY&_nc_ohc=ctyuL_2FsHEAX-J2XJU&_nc_oc=AQkzXmV3bq_SIypmXtwGfc8hJvyU4lSdYsXcNZDp6PD4S3ZXv8Ba3S3NYxpjKoBOqAQ&_nc_ht=scontent.flhe7-1.fna&oh=2de1746908d132ef4e26945fd6c7d6e5&oe=60D29969",
   },
@@ -56,8 +56,11 @@ const profileDetailData = [
   },
 ];
 
+// product data functions
 export const getItem = () => itemData;
-export const getItemById = (id) => {
-  return itemData.find((item) => item.id == id);
-};
+export const getItemById = (id) => itemData.find((item) => item.id == id);
+
+// profile Data functions
 export const getProfileData = () => profileDetailData;
+export const getProfileDataByID = (id) =>
+  profileDetailData.find(profile=>profile.id == id);
