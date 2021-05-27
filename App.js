@@ -29,8 +29,7 @@ export default function App() {
   // const [userName,setUserName]=useState([]);
   // const {landscape} =useDeviceOrientation();
   const [messageT, setMessageT] = useState(false);
-  const {image} = getProfileDataByID(1);
-
+  const { image } = getProfileDataByID(1);
 
   // useEffect(()=>{
   //   fetch('https://jsonplaceholder.typicode.com/users')
@@ -41,43 +40,13 @@ export default function App() {
 
   return (
     <RootScreen>
-      {/* <TimeLineScreen/>
-      <DetailCardScreen/> */}
-      {/* <MessageScreen/> */}
-
-      {/* <ListItem
-        onPress={() => console.log("tapped")}
-        renderRightActions={() => (
-          <DeleteAction onPress={() => alert(JSON.stringify(image))} />
-        )}
-        title="Muhammad Bilal"
-        subTitle="Bilalisz@gmail.com"
-        bgColor={AppColor.light}
-        icon="email"
-        iconSize={50}
-        iconColor={AppColor.light}
-        iconBG={AppColor.primary}
-        image={image}
-
-      
-      /> */}
-
-      {/* <AccountScreen/> */}
-      {/* <ProductListScreen/> */}
-      <TextBox icon='user'/>
-      <TextBox icon='lkdf'/>
+      <WelcomeScreen />
     </RootScreen>
-
-    //  <WelcomeScreen/>
-    // <ImageScreen/>
-    // <Borders/>
   );
 }
 
 const styles = StyleSheet.create({
   bodyContainer: {
     backgroundColor: color.bgColor,
-    
-    
   },
 });

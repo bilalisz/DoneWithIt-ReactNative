@@ -2,6 +2,7 @@ import React from "react";
 import { Image, ImageBackground, StyleSheet, View,Text, TouchableOpacity } from "react-native";
 import color from "../../config/AppColor";
 import ButtonComp from "../components/ButtonComp";
+import TextBox from "../components/TextBox";
 
 function WelcomeScreen(props) {
 
@@ -17,8 +18,11 @@ function WelcomeScreen(props) {
        <Image style={styles.logo} source={require('../assets/logo-red.png')}/>
        <Text style={styles.slogn}>Sell what you don't need...</Text>
        </View>
-      {/* <TouchableOpacity style={styles.loginBtn} onPress={()=>alert('login')}><Text style={styles.loginTxt}>LogIn</Text></TouchableOpacity>
-      <TouchableOpacity style={styles.registerBtn} onPress={()=>alert('Registor now')}><Text style={styles.regTxt}>Register</Text></TouchableOpacity> */}
+       <View>
+       <TextBox Ficon='user' placeholder='Username'/>
+      <TextBox Eicon='email' placeholder='Email'/>
+       </View>
+      
       <View style={{
       width:"100%",
       justifyContent:'center',
