@@ -55,6 +55,11 @@ const profileDetailData = [
       "https://pbs.twimg.com/profile_images/1350007502214209537/c7VRgZ_w_400x400.jpg",
   },
 ];
+const categories=[
+  {lable:"Furniture",value:1},
+  {lable:"Clothing",value:2},
+  {lable:"Cameras",value:3},
+]
 
 // product data functions
 export const getItem = () => itemData;
@@ -64,3 +69,6 @@ export const getItemById = (id) => itemData.find((item) => item.id == id);
 export const getProfileData = () => profileDetailData;
 export const getProfileDataByID = (id) =>
   profileDetailData.find(profile=>profile.id == id);
+
+  // category Data Function
+  export const getAllCategory=()=>categories;
