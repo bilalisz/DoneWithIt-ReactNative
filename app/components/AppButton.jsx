@@ -1,15 +1,16 @@
 import React from 'react';
-import { Text, TouchableOpacity, View,StyleSheet, Button } from 'react-native';
+import { Text, TouchableOpacity,StyleSheet  } from 'react-native';
 
 
 
 function AppButton(props) {
     const {bg,title,onPress}=props
+    console.log(title)
     return (
        <TouchableOpacity style={{...styles.container,backgroundColor:bg}} onPress={onPress}>
            <Text style={styles.text}>{title}</Text>
        </TouchableOpacity>
-    // <Button title={text} color={bg}/>
+   
     );
 }
 const styles = StyleSheet.create({

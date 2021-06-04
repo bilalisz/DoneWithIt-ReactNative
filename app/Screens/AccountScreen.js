@@ -2,8 +2,7 @@ import React from 'react';
 import { Alert, SafeAreaView, StyleSheet,View } from "react-native";
 import AppColor from '../../config/AppColor';
 import DeleteIconComp from '../components/DeleteAction';
-import Icon from '../components/Icon';
-import ListItem from '../components/ListItem';
+import {ListItem,Icon,DeleteAction} from '../components';
 import { getProfileDataByID } from '../services/fackservices';
 
 const {image,title}=getProfileDataByID(1);

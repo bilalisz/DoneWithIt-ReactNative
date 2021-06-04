@@ -3,7 +3,8 @@ import {  StyleSheet } from "react-native";
 
 import AppColor from './config/AppColor';
 import RootScreen from './app/Screens/RootScreen';
-import LoginScreen from "./app/Screens/LoginScreen";
+import {LoginScreen,WelcomeScreen} from "./app/Screens";
+
 
 
 
@@ -15,7 +16,8 @@ export default function App() {
 
   return (
     <RootScreen>
-     <LoginScreen screenChange={screenChange} changeScreen={toggle=> setScreenChange(!toggle)}/>
+    {screenChange?<WelcomeScreen/>: <LoginScreen onChangeScreen={toggle=> setScreenChange(toggle)}/>}
+     
     </RootScreen>
   );
 }

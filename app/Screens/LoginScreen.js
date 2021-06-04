@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import { Image, StyleSheet, View, Text, ScrollView } from "react-native";
+import React from "react";
+import { Image, StyleSheet, View, ScrollView } from "react-native";
 import { Formik } from "formik";
-import * as Yup from "yup";
 
 import AppColor from "../../config/AppColor";
-import AppButton from "../components/AppButton";
-import TextBox from "../components/TextBox";
-import AppText from "../components/AppText";
-
+import {
+  AppButton,
+  AppFormField,
+} from "../components";
 import { validationSchema } from "../../config/validation";
 
 // const validationSchema= Yup.object().shape({
@@ -17,13 +16,16 @@ import { validationSchema } from "../../config/validation";
 // })
 
 function LoginScreen(props) {
-    const {changeScreen,screenChange}=props
-  
-  const userInfo={ email: "", password: "" }
-  const handleSubmit = ({email,password}) => {
-      if(email && password)changeScreen(true)
-    };
+  const { onChangeScreen} = props;
 
+  const userInfo = { email: "", password: "" };
+  const handleSubmit = ({ email, password }) => {
+    if (email && password){
+      onChangeScreen(true);
+      console.log({email,password})
+    }
+    
+  };
 
   return (
     <ScrollView>
@@ -33,31 +35,29 @@ function LoginScreen(props) {
         onSubmit={(value) => handleSubmit(value)}
         validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit, errors }) => {
-          console.log(errors);
+        {({ handleSubmit }) => {
+          
           return (
             <>
-              <TextBox
+              <AppFormField
+                name="email"
                 Eicon="email"
                 placeholder="Email"
                 autoCapitalize="none"
                 autoCorrect={false}
-                keyboardType="email-address"
-                onChangeText={handleChange("email")}
-                textContentType="emailAddress"
+                keyboardType="default"
               />
-              <AppText text={errors.email} color={AppColor.dangerHot} />
-              <TextBox
+
+              <AppFormField
+                name="password"
                 Ficon="lock"
                 placeholder="Password"
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardType="default"
-                onChangeText={handleChange("password")}
-                secureTextEntry={true}
                 textContentType="password"
+                secureTextEntry
               />
-              <AppText text={errors.password} color={AppColor.dangerHot} />
               <View style={styles.buttonWrapper}>
                 <AppButton
                   title="Login"

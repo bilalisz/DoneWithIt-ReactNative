@@ -23,6 +23,9 @@ function TextBox(props) {
           style={styles.textInput}
           keyboardType="email-address"
           {...rest}
+         
+          
+          
         />
       </View>
     </SafeAreaView>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Alert, Text, TouchableOpacity, View} from 'react-native'
-import LongText from '../components/LongText';
+import {LongText} from '../components';
 
 function borders(props) {
     const text="this is I, working on react native app new updates this is I, working on react native app new updates"

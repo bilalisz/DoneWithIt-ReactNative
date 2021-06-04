@@ -5,14 +5,13 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity,
 } from "react-native";
-import App from "../../App";
+
 
 import AppColor from "../../config/AppColor";
-import color from "../../config/AppColor";
-import AppButton from "../components/AppButton";
-import TextBox from "../components/TextBox";
+
+import {AppButton,TextBox} from "../components";
+
 
 function WelcomeScreen(props) {
   const [text, setText] = useState("");
@@ -23,7 +22,8 @@ function WelcomeScreen(props) {
       blurRadius={3}
       source={require("../assets/background.jpg")}
     >
-      <View style={{ ...styles.logoContainer }}>
+      <View style={styles.backIcon}><Text>back</Text></View>
+      <View style={{ ...styles.logoContainer }}>  
         <Image style={styles.logo} source={require("../assets/logo-red.png")} />
         <Text style={styles.slogn}>Sell what you don't need...</Text>
       </View>
@@ -35,15 +35,16 @@ function WelcomeScreen(props) {
 
       <View style={styles.btnContainer}>
         <AppButton
-          bg={color.primary}
-          text={"Login"}
+          bg={AppColor.primary}
+          text="Login"
           onPress={() => console.log("tapped")}
         />
         <AppButton
-          bg={color.secondary}
-          text={"Register"}
+          bg={AppColor.secondary}
+          text="Register"
           onPress={() => console.log("register")}
         />
+
       </View>
     </ImageBackground>
   );
@@ -52,7 +53,7 @@ function WelcomeScreen(props) {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
     alignItems: "center",
   },
 
@@ -82,8 +83,11 @@ inputTextContainer:{
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    padding: 10,
+    padding:10,
   },
+  backIcon:{
+
+  }
 
 });
 
